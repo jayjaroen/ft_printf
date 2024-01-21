@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:54:15 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/03 22:17:32 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/21 16:11:24 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 // variadic function && macro
 #include <stdarg.h>
+#include <unistd.h>
 int	ft_printf(const char *args, ...);
 #endif
