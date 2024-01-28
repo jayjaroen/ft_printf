@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// understand the varadic variable
 float   average(int num_args, ...)
 {
     int total;
@@ -44,8 +45,11 @@ void    print(char *placeholder, ...)
     }
     va_end(args);
 }
+
 int main()
 {
-    printf("The average value is %.2f\n", average(3,34,345,9));
-    print("ddff", 3,2,1.4,1.5);
+    // printf("The average value is %.2f\n", average(3,34,345,9));
+    // print("ddff", 3,2,1.4,1.5);
+    printf("%i\n", 15/2);
+    printf("%d\n", 15/2);
 }
