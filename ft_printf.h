@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:54:15 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/28 15:55:22 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:15:50 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,11 @@
 int	ft_printf(const char *args, ...);
 void ft_itoa(long i, int base, int *j, char *str);
 int ft_putstr(char *str);
+int ft_putchar(int c);
+int ft_putstr(char *str);
+int ft_putpointer(void *p);
+int ft_putnum(int i);
+int ft_puthex(unsigned int i, char c);
+int ft_putunsigned(unsigned int c);
+void ft_prefix_pointer();
 #endif

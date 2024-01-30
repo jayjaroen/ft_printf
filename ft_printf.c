@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:22:41 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/28 16:00:45 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/30 22:46:35 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,59 +16,6 @@
 //The pointer of the argument to the list
 //Macro in varadic function
 //pointer printout prefix
-
-int ft_putchar(int c)
-{
-    return write(1, &c, 1);
-}
-
-int ft_putstr(char *str)
-{
-    int count;
-
-    if (!str)
-        return (-1);
-    count = 0;
-    while (*str)
-    {
-        ft_putchar((int)*str);
-        str++;
-        count++;
-    }
-    return (count);
-}
-
-int ft_putpointer(void *p)
-{
-    // To implement the function
-    int     count;
-
-
- 
-    ft_itoa((long) p, 16, &count, HEX_LOWER);
- //putnumber based - text
- //print prefix 
- //hexideximal 
-    return (count);
-}
-
-int ft_putnum(int i)
-{
-    int count;
-    
-    count = 0;
-    
-    ft_itoa((long) i, 10, &count, HEX_LOWER);
-    return(count);
-}
-
-int ft_puthex(unsigned int i)
-{
-    int count;
-    
-    count = 0;
-    return(count);
-}
 
 int ft_format(char spec, va_list ap)
 {
@@ -85,13 +32,15 @@ int ft_format(char spec, va_list ap)
         count += ft_putpointer(va_arg(ap, void *));
     else if (spec == 'i' || spec == 'd')
         count += ft_putnum(va_arg(ap, int));
+    else if (spec == 'u')
+        count += ft_putunsigned(va_arg(ap, unsigned int));
     else if (spec == 'x' || spec == 'X')
-        count += ft_puthex(va_arg(ap, int));
+        count += ft_puthex(va_arg(ap, int), spec);
     //write print_f for hexademimal && digit
-    //also "u" // unsigned 
+    //also "u" // unsigned
     return (count);
 }
-
+// main function
 int	ft_printf(const char *args, ...)
 {
     va_list ap; //argument pointer --> standard naming for va_list // already a pointer // storting address // list of the address
@@ -122,10 +71,19 @@ int main(void)
     // ft_printf("The result of MY print f: %s\n", "hahaha");
     // printf("The result of print f: %s\n", "hahaha");
     printf("pointer address: %p\n", i); //234234353
-    // printf("unsigned long: %p\n", (void *)(i));
+    // // printf("unsigned long: %p\n", (void *)(i));
     ft_printf("my function pointer address: %p\n", i);
-    ft_printf("%%\n");
-    printf("%d\n", 123456789);
-    ft_printf("%d\n", 123456789);
-    printf("%x\n", -1);
+    // ft_printf("%%\n");
+    // printf("%d\n", 123456789);
+    // ft_printf("%d\n", 123456789);
+    // printf("%x\n", -1);
+    // check the return of printf function
+    // printf("the return of printf function: %i\n", printf("12344\n"));
+    // ft_printf("the return of my printf function: %i\n", ft_printf("12344\n"));
+    printf("lower case: %x\n", 1234522222);
+    printf("upper case: %X\n", 1234522222);
+    ft_printf("my print f lower case: %x\n", 1234522222);
+    ft_printf("my print f uppwer case: %X\n", 1234522222);
+    printf("printf unsigned int: %u\n", -12345);
+    ft_printf("my printf unsiged int: %u\n", -12345);
 }
