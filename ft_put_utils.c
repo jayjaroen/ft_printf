@@ -6,41 +6,36 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 12:48:57 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/30 22:19:57 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/31 21:20:56 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-void ft_itoa(long i, int base, int *j, char *ptr) //
+void ft_itoa(long num, int base, int *count, char *ptr) //
 {
-    long num;
+    // long i;
     char str[15];
-    size_t count;
+    size_t j;
+    size_t p;
 
-    num = (long)i; // but this is already long?
-    count = 14;
-    str[count] = '\0';
+    // i = (long)num; // but this is already long?
+    j = 14;
+    p = j;
+    str[j] = '\0';
     if (num < 0)
         num *= -1;
     while (num / base)
     {
         // str[--count] = (num % 10) + '0';
-        str[--count] = ptr[num % base];
+        str[--j] = ptr[num % base];
         num /= base;
     }
     // if (num)
-    str[--count] = ptr[num % base];
+    str[--j] = ptr[num % base];
     //  str[--count] = (num % 10) + '0';
     if (num < 0)
-        str[--count] = '-';
-    ft_putstr(&str[count]);
-    *j = count;
-}
-
-void ft_prefix_pointer()
-{
-    write (1, "0", 1);
-    write (1, "x", 1);
+        str[--j] = '-';
+    ft_putstr(&str[j]);
+    *count = p - j;
 }

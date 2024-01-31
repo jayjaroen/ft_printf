@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:22:41 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/30 22:46:35 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:35:13 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,16 @@ int ft_format(char spec, va_list ap)
     else if (spec == '%') //how to print the sign out
         count += ft_putchar('%');
     else if (spec == 'p')
+    {
+        count += write(1, "0x", 2);
         count += ft_putpointer(va_arg(ap, void *));
+    }
     else if (spec == 'i' || spec == 'd')
         count += ft_putnum(va_arg(ap, int));
     else if (spec == 'u')
         count += ft_putunsigned(va_arg(ap, unsigned int));
     else if (spec == 'x' || spec == 'X')
         count += ft_puthex(va_arg(ap, int), spec);
-    //write print_f for hexademimal && digit
-    //also "u" // unsigned
     return (count);
 }
 // main function
@@ -64,7 +65,7 @@ int	ft_printf(const char *args, ...)
     return (count);
 }
 
-int main(void)
+/*int main(void)
 {
     int *i;
 
@@ -73,17 +74,21 @@ int main(void)
     printf("pointer address: %p\n", i); //234234353
     // // printf("unsigned long: %p\n", (void *)(i));
     ft_printf("my function pointer address: %p\n", i);
+    printf("the return: %i\n", printf("%p", i));
+    ft_printf("the return: %i\n", ft_printf("%p",i));
     // ft_printf("%%\n");
-    // printf("%d\n", 123456789);
-    // ft_printf("%d\n", 123456789);
+    printf("%d\n", 000);
+    ft_printf("%d\n", 000);
     // printf("%x\n", -1);
     // check the return of printf function
     // printf("the return of printf function: %i\n", printf("12344\n"));
     // ft_printf("the return of my printf function: %i\n", ft_printf("12344\n"));
-    printf("lower case: %x\n", 1234522222);
-    printf("upper case: %X\n", 1234522222);
-    ft_printf("my print f lower case: %x\n", 1234522222);
-    ft_printf("my print f uppwer case: %X\n", 1234522222);
-    printf("printf unsigned int: %u\n", -12345);
-    ft_printf("my printf unsiged int: %u\n", -12345);
-}
+    // printf("lower case: %x\n", 1234522222);
+    // printf("upper case: %X\n", 1234522222);
+    // ft_printf("my print f lower case: %x\n", 1234522222);
+    // ft_printf("my print f uppwer case: %X\n", 1234522222);
+    // printf("printf unsigned int: %u\n", -12345);
+    // ft_printf("my printf unsiged int: %u\n", -12345);
+    printf("");
+    ft_printf("");
+}*/

@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:54:15 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/30 22:15:50 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:09:14 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF
 #define HEX_UPPER "0123456789ABCDEF"
 #define HEX_LOWER "0123456789abcdef"
+#define BASE_10 "0123456789"
 
 // variadic function && macro
 #include <stdarg.h>

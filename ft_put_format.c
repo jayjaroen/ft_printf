@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:08:06 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/30 22:46:53 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/01/31 22:09:59 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,7 @@ int ft_putpointer(void *p)
     int     count;
 
     count = 0;
-    ft_prefix_pointer();
     ft_itoa((long) p, 16, &count, HEX_LOWER);
- //putnumber based - text
- //print prefix
- //hexideximal
     return (count);
 }
 
@@ -53,7 +49,7 @@ int ft_putnum(int i)
 
     count = 0;
 
-    ft_itoa((long) i, 10, &count, HEX_LOWER);
+    ft_itoa((long) i, 10, &count, BASE_10);
     return (count);
 }
 
@@ -74,6 +70,6 @@ int ft_putunsigned(unsigned int i)
     int count;
 
     count = 0;
-    ft_itoa((long) i, 10, &count, HEX_LOWER);
+    ft_itoa((long) i, 10, &count, BASE_10);
     return (count);
 }
