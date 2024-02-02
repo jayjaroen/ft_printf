@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:22:41 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/31 22:35:13 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/02/02 22:41:41 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,18 @@ int	ft_printf(const char *args, ...)
 
 /*int main(void)
 {
-    int *i;
+    // int *i = NULL;
 
-    // ft_printf("The result of MY print f: %s\n", "hahaha");
-    // printf("The result of print f: %s\n", "hahaha");
-    printf("pointer address: %p\n", i); //234234353
-    // // printf("unsigned long: %p\n", (void *)(i));
-    ft_printf("my function pointer address: %p\n", i);
-    printf("the return: %i\n", printf("%p", i));
-    ft_printf("the return: %i\n", ft_printf("%p",i));
-    // ft_printf("%%\n");
-    printf("%d\n", 000);
-    ft_printf("%d\n", 000);
+    ft_printf("The result of MY print f: %s\n", "hahaha");
+    printf("The result of print f: %s\n", "hahaha");
+    // printf("pointer address: %p\n", i); //234234353
+    // // // printf("unsigned long: %p\n", (void *)(i));
+    // ft_printf("my function pointer address: %p\n", i);
+    // printf("the return: %i\n", printf("%p", i));
+    // ft_printf("the return: %i\n", ft_printf("%p",i));
+    // // ft_printf("%%\n");
+    // printf("%d\n", 000);
+    // ft_printf("%d\n", 000);
     // printf("%x\n", -1);
     // check the return of printf function
     // printf("the return of printf function: %i\n", printf("12344\n"));
@@ -89,6 +89,6 @@ int	ft_printf(const char *args, ...)
     // ft_printf("my print f uppwer case: %X\n", 1234522222);
     // printf("printf unsigned int: %u\n", -12345);
     // ft_printf("my printf unsiged int: %u\n", -12345);
-    printf("");
-    ft_printf("");
+    // printf("");
+    // ft_printf("");
 }*/

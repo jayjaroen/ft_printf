@@ -6,7 +6,7 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:08:06 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/01/31 22:09:59 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/02/02 22:41:46 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int ft_putstr(char *str)
 {
     int count;
 
-    if (!str)
-        return (-1);
     count = 0;
+    if (!str)
+        return write(1,"(null)", 6); //why this "null"?
     while (*str)
     {
         ft_putchar((int)*str);
