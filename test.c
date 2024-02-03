@@ -50,6 +50,8 @@ int main()
 {
     // printf("The average value is %.2f\n", average(3,34,345,9));
     // print("ddff", 3,2,1.4,1.5);
-    printf("%i\n", 15/2);
-    printf("%d\n", 15/2);
+    // printf("%i\n", 15/2);
+    // printf("%d\n", 15/2);
+    // printf("%d\n", printf("%s\n", "dfdfdf %s"));
+    // printf("%i\n",printf("%p\n", (void *)-14523));
 }

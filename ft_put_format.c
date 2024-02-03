@@ -6,70 +6,55 @@
 /*   By: jjaroens <jjaroens@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 21:08:06 by jjaroens          #+#    #+#             */
-/*   Updated: 2024/02/02 22:41:46 by jjaroens         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:29:54 by jjaroens         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-// can use ft_putchar && ft_putstr from libft //
-// but ft_putchar && ft_putstr in libft doesn't return int?
-int ft_putchar(int c)
+
+int	ft_putpointer(void *p)
 {
-    return write(1, &c, 1);
+	int	count;
+
+	count = 0;
+	ft_printpointer((unsigned long)p, 16, &count, HEX_LOWER);
+	if (count == 0)
+		return (-1);
+	return (count);
 }
 
-int ft_putstr(char *str)
+int	ft_putnum(int i)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    if (!str)
-        return write(1,"(null)", 6); //why this "null"?
-    while (*str)
-    {
-        ft_putchar((int)*str);
-        str++;
-        count++;
-    }
-    return (count);
+	count = 0;
+	ft_itoa((long) i, 10, &count, BASE_10);
+	if (count == 0)
+		return (-1);
+	return (count);
 }
 
-int ft_putpointer(void *p)
+int	ft_puthex(unsigned int i, char c)
 {
-    int     count;
+	int	count;
 
-    count = 0;
-    ft_itoa((long) p, 16, &count, HEX_LOWER);
-    return (count);
+	count = 0;
+	if (c == 'x')
+		ft_itoa((long) i, 16, &count, HEX_LOWER);
+	else if (c == 'X')
+		ft_itoa((long) i, 16, &count, HEX_UPPER);
+	if (count == 0)
+		return (-1);
+	return (count);
 }
 
-int ft_putnum(int i)
+int	ft_putunsigned(unsigned int i)
 {
-    int count;
+	int	count;
 
-    count = 0;
-
-    ft_itoa((long) i, 10, &count, BASE_10);
-    return (count);
-}
-
-int ft_puthex(unsigned int i, char c)
-{
-    int count;
-
-    count = 0;
-    if (c == 'x')
-        ft_itoa((long) i, 16, &count, HEX_LOWER);
-    else if (c == 'X')
-        ft_itoa((long) i, 16, &count, HEX_UPPER);
-    return (count);
-}
-
-int ft_putunsigned(unsigned int i)
-{
-    int count;
-
-    count = 0;
-    ft_itoa((long) i, 10, &count, BASE_10);
-    return (count);
+	count = 0;
+	ft_itoa((long) i, 10, &count, BASE_10);
+	if (count == 0)
+		return (-1);
+	return (count);
 }
