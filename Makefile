@@ -15,6 +15,7 @@ SRCS = ft_printf.c ft_put_utils.c ft_put_format.c
 OBJS = $(SRCS:.c=.o)
 NAME = libftprintf.a
 CC	= cc
+HEADER  = ft_printf.h
 RM	= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 .c.o:
@@ -22,7 +23,7 @@ CFLAGS	= -Wall -Wextra -Werror
 	
 all: ${NAME}
 
-${NAME}: ${OBJS}
+${NAME}: ${OBJS} ${HEADER}
 		ar rc ${NAME} ${OBJS}
 
 clean:
